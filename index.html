@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manya Lamba — AI GTM Engineer</title>
+<meta name="description" content="Manya Lamba — AI GTM Engineer & Data Scientist building AI systems for growth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F3F4F1;
+    --bg-raised: #ECEDE9;
+    --ink: #0E0F0C;
+    --muted: #6B6F66;
+    --line: #D8D9D3;
+    --signal: #00B85C;
+    --signal-dim: #DCEFE3;
+    --blue: #2851FF;
+    --blue-dim: #E2E8FF;
+    --pink: #FF3E7F;
+    --pink-dim: #FFE1EA;
+    --amber: #E08A00;
+    --amber-dim: #FCEBC9;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar{
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 25%, var(--pink) 25%, var(--pink) 50%, var(--amber) 50%, var(--amber) 75%, var(--signal) 75%, var(--signal) 100%);
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  :focus-visible{
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---- status bar ---- */
+  .statusbar{
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+  .statusbar .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    gap: 16px;
+  }
+  .statusbar .dot{
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--signal);
+    margin-right: 8px;
+    box-shadow: 0 0 0 3px var(--signal-dim);
+  }
+  .statusbar .right{ white-space: nowrap; }
+  @media (max-width: 600px){
+    .statusbar .right{ display: none; }
+  }
+
+  /* ---- hero ---- */
+  .hero{
+    padding: 88px 0 56px;
+  }
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--blue);
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+  .eyebrow::before{ content: "// "; color: var(--muted); }
+  h1{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 9vw, 112px);
+    line-height: 0.94;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .role{
+    font-family: var(--mono);
+    font-size: clamp(13px, 1.6vw, 16px);
+    color: var(--muted);
+    margin-top: 22px;
+    max-width: 640px;
+  }
+  .role .sep{ color: var(--line); margin: 0 8px; }
+  .tagline{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(20px, 2.6vw, 28px);
+    line-height: 1.3;
+    max-width: 720px;
+    margin-top: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---- affiliation strip ---- */
+  .strip{
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+  }
+  .strip .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    align-items: center;
+  }
+  .strip .label{
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-right: 4px;
+  }
+  .wordmark{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    opacity: 0.85;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: opacity 0.15s ease, border-color 0.15s ease;
+  }
+  .wordmark:hover{ opacity: 1; }
+  .wordmark.c-blue:hover{ border-color: var(--blue); }
+  .wordmark.c-pink:hover{ border-color: var(--pink); }
+  .wordmark.c-amber:hover{ border-color: var(--amber); }
+
+  /* ---- about ---- */
+  .about{
+    padding: 72px 0;
+    display: grid;
+    grid-template-columns: 0.85fr 1.4fr 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 900px){
+    .about{ grid-template-columns: 1fr; gap: 32px; }
+  }
+  .portrait{
+    width: 100%;
+    aspect-ratio: 1 / 1.02;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .portrait img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .about p{
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.55;
+    max-width: 56ch;
+  }
+  .about-side{
+    border-left: 1px solid var(--line);
+    padding-left: 32px;
+  }
+  @media (max-width: 900px){
+    .about-side{ border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 24px; }
+  }
+  .about-side .h{
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .get-in-touch{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--pink);
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 2px;
+  }
+  .get-in-touch svg{ transition: transform 0.15s ease; }
+  .get-in-touch:hover svg{ transform: translate(2px, -2px); }
+
+  .contact-list{
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .contact-list a:hover{ color: var(--ink); }
+
+  /* ---- section heads ---- */
+  .section{
+    padding: 72px 0;
+    border-top: 1px solid var(--line);
+  }
+  .section-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+  .section-head h2{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 40px);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .section-head .count{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ---- projects ---- */
+  .projects{
+    display: flex;
+    flex-direction: column;
+  }
+  .project{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+    transition: background 0.15s ease;
+  }
+  .project:first-child{ border-top: none; }
+  .project:hover{ background: var(--bg-raised); }
+  .project-inner{
+    padding: 0 4px;
+  }
+  .project h3{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(19px, 2.4vw, 24px);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .project h3 a{
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+  .project h3 a:hover{
+    border-color: var(--ink);
+  }
+  .project p{
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 60ch;
+  }
+  .tag{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-top: 4px;
+    margin-right: 4px;
+  }
+  .tag.shipped{ background: var(--signal-dim); color: var(--signal); }
+  .tag.shipped.c-blue{ background: var(--blue-dim); color: var(--blue); }
+  .tag.shipped.c-pink{ background: var(--pink-dim); color: var(--pink); }
+  .tag.shipped.c-amber{ background: var(--amber-dim); color: var(--amber); }
+  .tag.building{ background: var(--bg-raised); color: var(--muted); border: 1px solid var(--line); }
+
+  /* ---- skills ---- */
+  .skill-group{ margin-bottom: 36px; }
+  .skill-group:last-child{ margin-bottom: 0; }
+  .skill-group .h{
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .skill-group .h::before{ content: "// "; color: var(--line); }
+  .flags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .flag{
+    font-family: var(--mono);
+    font-size: 13px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 7px 12px;
+    background: var(--bg-raised);
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+  .flag:hover{ border-color: var(--ink); }
+  .flag::before{ content: "--"; color: var(--signal); }
+
+  .skill-group.c-blue .flag{ background: var(--blue-dim); border-color: var(--blue-dim); }
+  .skill-group.c-blue .flag::before{ color: var(--blue); }
+  .skill-group.c-blue .flag:hover{ border-color: var(--blue); }
+
+  .skill-group.c-pink .flag{ background: var(--pink-dim); border-color: var(--pink-dim); }
+  .skill-group.c-pink .flag::before{ color: var(--pink); }
+  .skill-group.c-pink .flag:hover{ border-color: var(--pink); }
+
+  .skill-group.c-amber .flag{ background: var(--amber-dim); border-color: var(--amber-dim); }
+  .skill-group.c-amber .flag::before{ color: var(--amber); }
+  .skill-group.c-amber .flag:hover{ border-color: var(--amber); }
+
+  /* ---- footer ---- */
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 48px 0 56px;
+  }
+  footer .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-links{
+    display: flex;
+    gap: 28px;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+  .footer-links a{
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.15s ease;
+  }
+  .footer-links a:hover{ border-color: var(--ink); }
+  .footer-note{
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior: auto !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar"></div>
+
+  <div class="statusbar">
+    <div class="wrap">
+      <span><span class="dot"></span>MANYA_LAMBA.SYS — STATUS: ONLINE</span>
+      <span class="right">BUILDING AI SYSTEMS FOR GROWTH</span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">ai_gtm_engineer.init()</div>
+      <h1>Manya Lamba</h1>
+      <p class="role">AI GTM Engineer<span class="sep">/</span>Data Scientist<span class="sep">/</span>Building AI Systems for Growth</p>
+      <p class="tagline">Building AI-native products, GTM systems, and data-driven tools that help businesses move faster.</p>
+    </div>
+  </header>
+
+  <section class="strip">
+    <div class="wrap">
+      <span class="label">Affiliated with</span>
+      <span class="wordmark c-blue">UC Berkeley</span>
+      <span class="wordmark c-pink">Qualcomm</span>
+      <span class="wordmark c-amber">PwC</span>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap" style="display:contents;">
+      <div class="portrait">
+        <img src="manya-photo.jpg" alt="Portrait of Manya Lamba">
+      </div>
+      <p>I'm a recent UC Berkeley graduate in Data Science and Economics, passionate about building AI systems that solve real business problems. My work sits at the intersection of AI, data, and go-to-market — from developing agentic workflows and automation tools to analyzing product growth and customer strategy. I'm excited by early-stage startups where I can ship quickly, work across functions, and help bring frontier AI to customers.</p>
+      <div class="about-side">
+        <div class="h">Get in touch</div>
+        <a class="get-in-touch" href="mailto:manyalamba@berkeley.edu">
+          Email me
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+        <div class="contact-list">
+          <a href="mailto:manyalamba@berkeley.edu">manyalamba@berkeley.edu</a>
+          <a href="https://www.linkedin.com/in/manyalamba/" target="_blank" rel="noopener">linkedin.com/in/manyalamba</a>
+          <a href="https://github.com/manyalamba014" target="_blank" rel="noopener">github.com/manyalamba014</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Featured Projects</h2>
+        <span class="count">03 total</span>
+      </div>
+      <div class="projects">
+
+        <div class="project">
+          <div class="project-inner">
+            <h3><a href="https://github.com/manyalamba014/gtm-chatbot" class="project-link" target="_blank" rel="noopener">AI GTM Consulting Copilot</a></h3>
+            <p>An AI assistant that helps startups analyze positioning, ICPs, competitors, and GTM strategy using retrieval, LLMs, and structured frameworks.</p>
+          </div>
+          <span class="tag shipped c-blue">Shipped</span>
+        </div>
+
+        <div class="project">
+          <div class="project-inner">
+            <h3><a href="https://github.com/manyalamba014/amazon-product-review-sentiment-authenticity-detection" class="project-link" target="_blank" rel="noopener">Amazon Review Sentiment Analysis</a></h3>
+            <p>An NLP pipeline analyzing 40K+ reviews using TF-IDF, Logistic Regression, and SVM to detect deceptive reviews and uncover customer insights.</p>
+          </div>
+          <span class="tag shipped c-pink">Shipped</span>
+        </div>
+
+        <div class="project">
+          <div class="project-inner">
+            <h3><a href="#" class="project-link">AI Agent Projects</a></h3>
+            <p>A collection of LLM-powered agents and automation workflows built using modern AI tooling.</p>
+          </div>
+          <span class="tag shipped c-amber">Shipped</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <span class="count">14 total</span>
+      </div>
+
+      <div class="skill-group c-blue">
+        <div class="h">Languages</div>
+        <div class="flags">
+          <span class="flag">python</span>
+          <span class="flag">sql</span>
+          <span class="flag">typescript</span>
+          <span class="flag">javascript</span>
+        </div>
+      </div>
+
+      <div class="skill-group c-pink">
+        <div class="h">AI & ML</div>
+        <div class="flags">
+          <span class="flag">ai-agents</span>
+          <span class="flag">llms</span>
+          <span class="flag">langchain</span>
+          <span class="flag">mcp</span>
+          <span class="flag">prompt-engineering</span>
+          <span class="flag">machine-learning</span>
+        </div>
+      </div>
+
+      <div class="skill-group c-amber">
+        <div class="h">GTM & Data</div>
+        <div class="flags">
+          <span class="flag">gtm-strategy</span>
+          <span class="flag">data-analytics</span>
+          <span class="flag">product-analytics</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-note">© 2026 Manya Lamba</div>
+      <div class="footer-links">
+        <a href="mailto:manyalamba@berkeley.edu">Email</a>
+        <a href="https://www.linkedin.com/in/manyalamba/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/manyalamba014" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
